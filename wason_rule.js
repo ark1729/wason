@@ -33,8 +33,8 @@ else
   }
   else if(taskid == 2)
   {
-    if((Num2<Num1) && (Num3<Num2) && (Num3>=-50) && (diff1==-2) && (diff2==-2) &&
-    (Num1<=50) && (Num1%2==1))
+    if((Num2<Num1) && (Num3<Num2) && (Num3>=-50) && (Math.abs(diff1)==2) && (Math.abs(diff2)==2) &&
+    (Num1<=50) && (Math.abs(Num1%2)==1))
     {
       tf.innerHTML = "FIT";
     }
