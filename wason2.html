@@ -1,0 +1,115 @@
+<p style="text-align: center;"><span style="font-size:22px;"><span style="font-family: arial,helvetica,sans-serif;"><strong>Round 1</strong></span></span></p>
+
+<p id="demo">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="font-family: arial,helvetica,sans-serif;"><strong>Initial Triple : 12, 9, 6</strong></span></span></p>
+
+<p id="task" hidden>2</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="font-family: arial,helvetica,sans-serif;"><strong>Propose a triple</strong></span></span></p>
+<br>
+<span style="font-size:19px;"><span style="font-family: arial,helvetica,sans-serif;">You may propose additional triples to help you discover the Correct Rule(s). The computer will tell you whether the triple you proposed fits the Correct Rule(s).</span></span>
+
+<div style="text-align: center;"><br>
+<strong><span style="font-size:19px;"><span style="font-family: arial,helvetica,sans-serif;">Write one number of your triple in each box below.</span></span></strong></div>
+&nbsp;
+
+<table align="center" border="0.1" style="width: 450px; height: 62px">
+ <tbody>
+  <tr>
+   <td style="text-align: center;"><span style="font-size: 19px;"><span style="font-family: arial,helvetica,sans-serif;">First Number</span></span></td>
+   <td style="text-align: center;"><span style="font-size: 19px;"><span style="font-family: arial,helvetica,sans-serif;">Second Number</span></span></td>
+   <td style="text-align: center;"><span style="font-size: 19px;"><span style="font-family: arial,helvetica,sans-serif;">Third Number</span></span></td>
+  </tr>
+  <tr id="valueRow">
+   <td style="text-align: center;"><input id="Num_1" maxlength="15" name="Number1" placeholder="" size="0" type="text"></td>
+   <td style="text-align: center;"><input id="Num_2" maxlength="15" name="Number2" placeholder="" size="0" type="text"></td>
+   <td style="text-align: center;"><input id="Num_3" maxlength="15" name="Number3" placeholder="" size="0" type="text"></td>
+  </tr>
+ </tbody>
+</table>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><strong>Feedback</strong></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<div style="text-align: center;"><span style="font-size:19px;"><span style="font-family: arial,helvetica,sans-serif;">Press the button below to receive feedback.</span></span></div>
+&nbsp;
+
+<div style="text-align: center;"><span style="font-size:19px;"><span style="font-family: arial,helvetica,sans-serif;"><input name="calc" onclick="testFunction()" style="width:300px;height:30px" type="BUTTON" value="CLICK HERE TO RECEIVE FEEDBACK"></span></span></div>
+<br>
+<br>
+<span style="font-size:19px;"><span style="font-family: arial,helvetica,sans-serif;">"FIT" indicates that the Proposed Triple fits the Correct Rule(s).<br>
+"DNF" indicates that the Proposed Triple does not fit the Correct Rule(s).</span></span><br>
+<br>
+<style type="text/css">#feed1 { background-color:#000000; }
+</style>
+
+<table align="center" border="0.1" style="width: 249px; height: 37px">
+ <tbody>
+  <tr>
+   <td id="feed2" style="text-align: center;"><span style="font-size:19px;"><span style="font-family: arial,helvetica,sans-serif;"><input id="feed1" maxlength="15" name="feed1" size="0" value=""> <span style="font-size: 22px;"><span style="font-family: arial,helvetica,sans-serif;">Feedback</span></span></span></span></td>
+  </tr>
+ </tbody>
+</table>
+
+<script>
+function testFunction() {
+ 
+  var Num1 = parseInt(document.getElementById("Num_1").value, 10);
+  var Num2 = parseInt(document.getElementById("Num_2").value, 10);  
+  var Num3 = parseInt(document.getElementById("Num_3").value, 10);
+  var taskid = parseInt(document.getElementById("task").innerHTML, 10);
+
+  var diff1 = Num2-Num1;
+  var diff2 = Num3-Num2;
+ 
+var tf = document.getElementById("feed2");  
+alert(Num1);
+alert(Num2);
+alert(Num3);
+alert(taskid == 1);
+if(isNaN(Num1) && isNaN(Num2) && isNaN(Num3))
+{
+}
+else
+{
+  if(taskid == 1)
+  {
+    if((Num2>Num1) && (Num3>Num2) && (Num1>=2) && (diff1==2) && (diff2==2) &&
+    (Num3<=100) && (Num1%2==0))
+    {
+      tf.innerHTML = "FIT";
+    }
+    else
+    {
+      tf.innerHTML = "DNF";
+    }
+  }
+  else if(taskid == 2)
+  {
+    if((Num2<Num1) && (Num3<Num2) && (Num3>=-50) && (diff1==-3) && (diff2==-3) &&
+    (Num1<=50))
+    {
+      tf.innerHTML = "FIT";
+    }
+    else
+    {
+      tf.innerHTML = "DNF";
+    }
+  }
+  else
+  {
+  }
+}
+document.getElementById("Num_1").readOnly = true;
+document.getElementById("Num_2").readOnly = true;
+document.getElementById("Num_3").readOnly = true;
+}
+</script>
